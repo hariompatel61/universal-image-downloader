@@ -12,12 +12,10 @@
 ### 📸 Sample Outputs (100% Automated)
 <table width="100%">
   <tr>
-    <td width="50%"><img src="assets/samosa.jpg" width="100%" alt="High Quality Samosa"></td>
-    <td width="50%"><img src="assets/dosa.jpg" width="100%" alt="High Quality Dosa"></td>
-  </tr>
-  <tr>
-    <td width="50%"><img src="assets/idli.jpg" width="100%" alt="High Quality Idli"></td>
-    <td width="50%"><img src="assets/poha.jpg" width="100%" alt="High Quality Poha"></td>
+    <td width="25%"><img src="assets/samosa.jpg" width="100%" alt="High Quality Samosa"></td>
+    <td width="25%"><img src="assets/dosa.jpg" width="100%" alt="High Quality Dosa"></td>
+    <td width="25%"><img src="assets/idli.jpg" width="100%" alt="High Quality Idli"></td>
+    <td width="25%"><img src="assets/poha.jpg" width="100%" alt="High Quality Poha"></td>
   </tr>
 </table>
 <br>
