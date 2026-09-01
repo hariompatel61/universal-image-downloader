@@ -39,8 +39,22 @@ Whether you need **1,000+ premium food dishes**, **apparel mockups**, or **natur
 - 📂 **Multi-Job JSON Queue**: Process 50 different Excel files in a single run. The `config.json` system allows you to configure different search contexts (e.g., "clothing apparel" vs "Indian food dish") for each file.
 - 🧠 **Smart Header Detection**: Effortlessly parses messy Excel sheets. Works perfectly with 1-column files, 2-column files, or custom column headers.
 - ⚡ **Resume & Skip Logic**: Network dropped? No problem. The script instantly skips already downloaded images, saving massive bandwidth and time.
+- 📦 **Automatic ZIP Archive**: Once a download job finishes, the tool automatically packages all downloaded images into a ready-to-use `<output_folder>.zip` file (e.g., `product_images.zip`) alongside detailed CSV audit reports.
 
 ---
+
+## 📁 Output Structure
+
+After execution, the following files and folders are produced:
+```text
+├── product_images/              # Directory with original high-res JPEG images
+│   ├── samosa.jpg
+│   ├── masala-dosa.jpg
+│   └── ...
+├── product_images.zip           # 📦 Auto-generated ZIP containing all downloaded images
+├── report_Study_Break_...csv    # Detailed CSV report (status, filenames, search stage)
+└── config.json                  # Persistent configuration settings
+```
 
 ## 📦 Installation & Dependencies
 

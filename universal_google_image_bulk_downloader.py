@@ -4,6 +4,7 @@ import time
 import json
 import hashlib
 import random
+import zipfile
 from pathlib import Path
 from urllib.parse import quote
 
@@ -413,6 +414,30 @@ def download_image(driver, product, save_path, job, config):
     return False, " | ".join(failures)
 
 
+def create_zip_archive(output_dir):
+    """Create a zip archive containing all downloaded files in the output directory."""
+    output_path = Path(output_dir)
+    if not output_path.exists():
+        return None
+
+    files_to_zip = [f for f in output_path.rglob("*") if f.is_file() and not f.name.endswith(".zip")]
+
+    if not files_to_zip:
+        print(f"No files found in '{output_path.name}' to zip.")
+        return None
+
+    zip_file_path = output_path.parent / f"{output_path.name}.zip"
+    print(f"Creating zip archive '{zip_file_path.name}' ({len(files_to_zip)} file(s))...")
+
+    with zipfile.ZipFile(zip_file_path, "w", zipfile.ZIP_DEFLATED) as zipf:
+        for file_path in files_to_zip:
+            arcname = file_path.relative_to(output_path)
+            zipf.write(file_path, arcname=str(arcname))
+
+    print(f"Zip created successfully: {zip_file_path.name}")
+    return zip_file_path
+
+
 def process_job(job, config, driver):
     data_file = job.get("data_file")
     if not data_file:
@@ -520,6 +545,12 @@ def process_job(job, config, driver):
     
     print(f"Job complete. Success/Skipped: {success} | Failed: {failed}")
     print(f"Report saved to: {report_file.name}")
+    
+    # Create zip archive of the output images
+    zip_path = create_zip_archive(output_dir)
+    if zip_path:
+        print(f"All images archived into: {zip_path.name}")
+        
     print("-" * 70)
     
     return success, failed
