@@ -9,13 +9,17 @@
 
 *Automate massive image dataset generation for E-Commerce catalogs, AI Training, and Content Management Systems without ever getting blocked.*
 
+<br>
+<img src="https://via.placeholder.com/800x400.png?text=Terminal+Demo+Recording" alt="Terminal Execution Demo">
+<br>
+
 </div>
 
 ---
 
 ## 🚀 Overview
 
-**Universal Google Image Bulk Downloader Pro** is a production-grade, highly configurable image scraping tool designed to bypass Google's strict anti-bot mechanisms. 
+**Universal Google Image Bulk Downloader Pro** is a production-grade, highly configurable image scraping tool designed to bypass strict anti-bot mechanisms. 
 
 Whether you need **1,000+ premium food dishes**, **apparel mockups**, or **nature landscapes**, this tool seamlessly parses your Excel/CSV sheets and downloads perfectly formatted, high-resolution imagery completely hands-free.
 
@@ -31,11 +35,11 @@ Whether you need **1,000+ premium food dishes**, **apparel mockups**, or **natur
 
 ---
 
-## 📦 Installation
+## 📦 Installation & Dependencies
 
 1. **Clone the Repository** (or download the folder):
    ```bash
-   git clone https://github.com/yourusername/universal-image-downloader.git
+   git clone https://github.com/hariompatel61/universal-image-downloader.git
    cd universal-image-downloader
    ```
 
@@ -44,45 +48,83 @@ Whether you need **1,000+ premium food dishes**, **apparel mockups**, or **natur
    pip install -r requirements.txt
    ```
    *(Ensure you have Google Chrome installed on your machine).*
-
----
-
-## ⚙️ Configuration & Usage
-
-1. **Run the tool for the first time** to generate the default configuration:
-   ```bash
-   python universal_google_image_bulk_downloader.py
-   ```
-2. **Edit `config.json`**:
-   Open the newly created `config.json` to define your download jobs. 
    
-   ```json
-   {
-       "premium_sites": ["freepik.com", "unsplash.com", "pexels.com"],
-       "wait_seconds_per_image": 15,
-       "jobs": [
-           {
-               "data_file": "My_Catalog.xlsx",
-               "name_column": "Product Name",
-               "search_context": "high quality studio photography",
-               "fallback_filters": "-video -youtube",
-               "output_folder": "catalog_images"
-           }
-       ]
-   }
+   **Contents of `requirements.txt`:**
+   ```text
+   undetected-chromedriver>=3.5.5
+   selenium>=4.21.0
+   pandas>=2.0.0
+   openpyxl>=3.1.2
+   Pillow>=10.0.0
+   requests>=2.31.0
    ```
-3. **Start the Engine**:
-   ```bash
-   python universal_google_image_bulk_downloader.py
-   ```
-   *Note: On your very first run, a Chrome window will open. You have 10 seconds to manually solve any initial Google CAPTCHA. Your session is then saved in `chrome_profile/` for all future automated runs!*
 
 ---
 
-## 📊 Perfect For:
-- **E-Commerce Managers**: Automating Shopify, WooCommerce, or Amazon catalog imagery.
-- **AI/ML Engineers**: Creating massive labeled datasets for Computer Vision (YOLO, ResNet) training.
-- **Web Scrapers & Data Miners**: Extracting geo-tagged, SEO-optimized image assets.
+## ⚙️ Configuration (`config.json`)
+
+On the first run, the script generates a `config.json`. Below is a full, exhaustive example of all available fields you can tweak:
+
+```json
+{
+    "premium_sites": [
+        "freepik.com",
+        "unsplash.com",
+        "pexels.com",
+        "pixabay.com"
+    ],
+    "min_width": 180,
+    "min_height": 180,
+    "wait_seconds_per_image": 15,
+    "jobs": [
+        {
+            "data_file": "Study_Break_College_Canteen_Menu.xlsx",
+            "name_column": "Item Name",
+            "category_column": "Category",
+            "search_context": "Indian food dish",
+            "fallback_filters": "-recipe -video -youtube",
+            "output_folder": "product_images"
+        },
+        {
+            "data_file": "clothing_catalog.xlsx",
+            "name_column": "",
+            "category_column": "",
+            "search_context": "clothing apparel flat lay",
+            "fallback_filters": "-human -model",
+            "output_folder": "clothing_images"
+        }
+    ]
+}
+```
+
+---
+
+## 🛠️ Troubleshooting & FAQ
+
+**Q: I'm getting a `SessionNotCreatedException` (Driver Mismatch)**
+> This means the undetected-chromedriver version doesn't match your installed Google Chrome version. By default, the script forces `version_main=151`. If you update Chrome, simply open the Python script and update `version_main=XXX` in the `init_driver()` function to match your browser.
+
+**Q: Google is still showing me CAPTCHAs!**
+> The script gives you 10 seconds on the very first run to solve the CAPTCHA manually. Once solved, `undetected-chromedriver` saves your session cookies in the `chrome_profile/` folder, meaning you won't be asked again on subsequent runs.
+
+**Q: It skipped an item that I want it to re-download.**
+> The script skips files that already exist in the output folder to save time. To force a re-download, simply delete the old image file, and run the script again.
+
+---
+
+## ⚖️ Ethical Use, Rate Limiting, & Legal Disclaimer
+
+> [!WARNING]
+> **Disclaimer:** This tool is intended for **personal, educational, and research purposes only**.
+
+- **Respect Image Licenses**: Downloading an image does not grant you the copyright. Always ensure you have the proper licenses or rights to use downloaded imagery, especially for commercial purposes.
+- **Rate Limiting**: To prevent accidental denial-of-service (DoS) to search engines, the script incorporates built-in random delays (1.5s to 3.5s) and longer page waits (3.5s). It generally averages **~10-15 requests per minute**. Do not remove these delays, as hammering servers unethically will lead to immediate IP bans.
+
+---
+
+## 🤝 Contributing
+
+We welcome community contributions! If you have ideas for adding new fallback logic, supporting other browsers, or improving error handling, please see our [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
 ---
 
