@@ -1,0 +1,8 @@
+pandas
+openpyxl
+icrawler
+Pillow
+requests
+selenium
+webdriver-manager
+undetected-chromedriver

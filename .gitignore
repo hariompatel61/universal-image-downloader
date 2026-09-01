@@ -1,0 +1,7 @@
+chrome_profile/
+*_images/
+report_*.csv
+bulk_download_report.csv
+__pycache__/
+*.pyc
+.env

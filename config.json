@@ -1,0 +1,26 @@
+{
+    "premium_sites": [
+        "freepik.com",
+        "unsplash.com",
+        "pexels.com",
+        "pixabay.com",
+        "vecteezy.com/free-photos"
+    ],
+    "min_width": 180,
+    "min_height": 180,
+    "wait_seconds_per_image": 15,
+    "jobs": [
+        {
+            "data_file": "Study_Break_College_Canteen_Menu.xlsx",
+            "search_context": "Indian food dish",
+            "fallback_filters": "-recipe -video -youtube",
+            "output_folder": "product_images"
+        },
+        {
+            "data_file": "example_clothing_catalog.xlsx",
+            "search_context": "clothing apparel",
+            "fallback_filters": "",
+            "output_folder": "clothing_images"
+        }
+    ]
+}
