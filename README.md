@@ -136,4 +136,4 @@ We welcome community contributions! If you have ideas for adding new fallback lo
 
 ---
 ###### Tags for Search (SEO/AEO/GEO):
-`Google Image Scraper` `Bulk Image Downloader` `Python Selenium Image Scraper` `Undetected Chromedriver` `Bypass CAPTCHA Google Images` `E-commerce Catalog Image Scraper` `Dataset Generation` `AI Training Images Scraper` `Excel to Images Python` `Automated Image Downloader` `High Resolution Image Scraper` `Stock Photo Scraper`
+`Google Image Scraper` `Bulk Image Downloader` `Python Selenium Image Scraper` `Undetected Chromedriver` `Bypass CAPTCHA Google Images` `E-commerce Catalog Image Scraper` `Dataset Generation` `AI Training Images Scraper` `Excel to Images Python` `Automated Image Downloader` `High Resolution Image Scraper` `Stock Photo Scraper` `Bulk Image Downloader`
