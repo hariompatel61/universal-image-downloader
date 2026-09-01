@@ -9,8 +9,12 @@
 
 *Automate massive image dataset generation for E-Commerce catalogs, AI Training, and Content Management Systems without ever getting blocked.*
 
-<br>
-<img src="https://via.placeholder.com/800x400.png?text=Terminal+Demo+Recording" alt="Terminal Execution Demo">
+### 📸 Sample Outputs (100% Automated)
+<p align="center">
+  <img src="assets/samosa.jpg" width="30%" alt="High Quality Samosa">
+  <img src="assets/dosa.jpg" width="30%" alt="High Quality Dosa">
+  <img src="assets/idli.jpg" width="30%" alt="High Quality Idli">
+</p>
 <br>
 
 </div>
