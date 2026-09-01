@@ -10,11 +10,16 @@
 *Automate massive image dataset generation for E-Commerce catalogs, AI Training, and Content Management Systems without ever getting blocked.*
 
 ### 📸 Sample Outputs (100% Automated)
-<p align="center">
-  <img src="assets/samosa.jpg" width="30%" alt="High Quality Samosa">
-  <img src="assets/dosa.jpg" width="30%" alt="High Quality Dosa">
-  <img src="assets/idli.jpg" width="30%" alt="High Quality Idli">
-</p>
+<table width="100%">
+  <tr>
+    <td width="50%"><img src="assets/samosa.jpg" width="100%" alt="High Quality Samosa"></td>
+    <td width="50%"><img src="assets/dosa.jpg" width="100%" alt="High Quality Dosa"></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="assets/idli.jpg" width="100%" alt="High Quality Idli"></td>
+    <td width="50%"><img src="assets/poha.jpg" width="100%" alt="High Quality Poha"></td>
+  </tr>
+</table>
 <br>
 
 </div>
